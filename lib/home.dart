@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'deal.dart';
 import 'calendar.dart';
+import 'card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
@@ -79,6 +80,7 @@ class _HomePageState extends State<HomePage> {
     final list = [
       listSearchWidget(context), // 0
       const CalendarPage(), // 1
+      const CardPage(),
     ];
     AppBar appBarSearch = AppBar(
       centerTitle: true,
@@ -177,7 +179,12 @@ class _HomePageState extends State<HomePage> {
               icon: Icon(
                 Icons.calendar_today,
               ),
-              label: "Календарь")
+              label: "Календарь"),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.list_alt_sharp,
+              ),
+              label: "List")
         ],
         onTap: (value) {
           setState(
@@ -185,8 +192,10 @@ class _HomePageState extends State<HomePage> {
               index = value;
               if (index == 0) {
                 title = 'Список дел';
-              } else {
+              } else if (index == 1) {
                 title = 'Календарь';
+              } else {
+                title = 'List';
               }
             },
           );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:monkey_app/card.dart';
 import 'package:monkey_app/home.dart';
 import 'auth.dart';
 
@@ -23,6 +24,7 @@ class MyThemeApp extends StatelessWidget {
       routes: {
         '/': (context) => const AuthPage(),
         '/home': (context) => const HomePage(),
+        '/card': (context) => const CardPage(),
       },
     );
   }
